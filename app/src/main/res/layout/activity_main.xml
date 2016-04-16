@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.javahelps.esldb01.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/pinkbackground"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:background="#c8d6d6"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="8dp"
+                    android:text="First Language(default only):"
+                    android:textColor="#0c0cfc"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/first_spinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/first_array" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/pinkbackground"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#c8d6d6"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="8dp"
+                    android:text="Second language(default only):"
+                    android:textColor="#0a0909"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:id="@+id/secondSpinner"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:entries="@array/second_array" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <RadioGroup
+            android:id="@+id/learnType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/deepbluebackground"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="8dp"
+                android:text="Select Word learning or Exercise by questions."
+                android:textColor="#FF0B0B0B"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/onBoth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:onClick="show"
+                android:paddingLeft="8dp"
+                android:text="Both" />
+
+            <RadioButton
+                android:id="@+id/onWord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="show"
+                android:paddingLeft="8dp"
+                android:text="Words" />
+
+            <RadioButton
+                android:id="@+id/onExercise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="show"
+                android:paddingLeft="8dp"
+                android:text="Exercise" />
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/dispMsg"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/yellowbackground"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:text="Status and message \n" />
+
+        <LinearLayout
+            android:id="@+id/wordSelectSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/bluebackground"
+            android:orientation="horizontal"
+            android:paddingBottom="4dp" >
+
+
+            <TextView
+                android:id="@+id/wordSectionView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#c3e2fc"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="Word section"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/increa100Word"
+                android:layout_width="42dp"
+                android:layout_height="36dp"
+                android:onClick="increa100"
+                android:text="++" />
+
+            <Button
+                android:id="@+id/increaWord"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:onClick="increasing"
+                android:text="+" />
+
+            <TextView
+                android:id="@+id/wordNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#c3e2fc"
+                android:paddingLeft="4dp"
+                android:paddingRight="4dp"
+                android:text="000"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/decreaWord"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:onClick="decreasing"
+                android:text="-" />
+
+            <Button
+                android:id="@+id/decrea100Word"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:onClick="decrea100"
+                android:text="--" />
+
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:onClick="startWords"
+                android:text="Start" />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/descriptionView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/bluebackground"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="Description: \n"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/sentenceView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/bluebackground"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="Sentence: \n"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/firstLanguageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/bluebackground"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="First Language: \n"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+
+        <ImageView
+            android:id="@+id/wordImage"
+            android:layout_width="160dp"
+            android:layout_height="120dp"
+            android:padding="8dp"
+            android:src="@drawable/apple"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/exerciseSelSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/panel_drawablegreen"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/exerciseSelView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#ddfcd4"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:text="Exercise section"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/questionType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/pinkbackground"
+                android:paddingLeft="10dp">
+
+
+                <RadioButton
+                    android:id="@+id/onDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:onClick="showExercise"
+                    android:paddingLeft="8dp"
+                    android:text="Description" />
+
+                <RadioButton
+                    android:id="@+id/onFirst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="showExercise"
+                    android:paddingLeft="8dp"
+                    android:text="First Language" />
+
+                <RadioButton
+                    android:id="@+id/onPhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="showExercise"
+                    android:paddingLeft="8dp"
+                    android:text="Photo" />
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/questionControlView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/panel_drawablegreen"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/increExercise"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:onClick="increExercise"
+                android:text="+" />
+
+            <TextView
+                android:id="@+id/exerciseNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#ddfcd4"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:text="000"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/decreExercise"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:onClick="decreExercise"
+                android:text="-" />
+
+            <Button
+                android:id="@+id/startExerciseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:onClick="startExercises"
+                android:text="Start" />
+
+            <Button
+                android:id="@+id/nextExerciseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:onClick="nextExercises"
+                android:text="next" />
+
+            <Button
+                android:id="@+id/endExerciseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:onClick="endExercises"
+                android:background="#FFEB3B"
+                android:text="Submit" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/questionView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/panel_drawablegreen"
+            android:paddingBottom="8dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="6dp"
+            android:text="Question: "
+            android:textSize="16sp" />
+
+
+        <LinearLayout
+            android:id="@+id/answerGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/panel_drawablegreen"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/answerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:text="Answer: "
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/typeAnswer"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/pinkbackground"
+                android:singleLine="true"
+                android:lines="1"
+                android:paddingBottom="6dp"
+                android:paddingLeft="8dp"
+                android:paddingTop="6dp"
+                android:hint="Type here"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/clearButton"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:onClick="onClearAnswer"
+                android:text="Clear" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/exerciseImage"
+            android:layout_width="160dp"
+            android:layout_height="120dp"
+            android:padding="2dp"
+            android:src="@drawable/banana"
+            android:visibility="gone" />
+
+
+        <TextView
+            android:id="@+id/dispMsg01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:padding="8dp"
+            android:text="Hint! \nLucky Learning"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+</ScrollView>

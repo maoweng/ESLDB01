@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ESLDB01</string>
+    <string-array name="first_array">
+        <item>Taiwanese</item>
+        <item>English</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Japanese</item>
+        <item>Russian</item>
+
+    </string-array>
+
+    <string-array name="second_array">
+        <item>English</item>
+        <item>Taiwan</item>
+        <item>French</item>
+        <item>German</item>
+        <item>Japanese</item>
+        <item>Russian</item>
+        <item>Taiwanese</item>
+
+    </string-array>
+
+    <string-array name="question_array">
+        <item>1. Description</item>
+        <item>2. First Language</item>
+        <item>3. Photo</item>
+    </string-array>
+
+</resources>
